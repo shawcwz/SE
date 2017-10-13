@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Modern Business - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/Stars.css" rel="stylesheet">
+    <!--Yellow Stars-->
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/ownprofile.css">
+
+    <link href="css/elements.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script type="text/javascript" src="ownprofile.js"></script>
+    <script src="app.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDeJ6e3F1CcZGL8CrVEVa8qN-CTqA0izoM",
+      authDomain: "tutorial-27307.firebaseapp.com",
+      databaseURL: "https://tutorial-27307.firebaseio.com",
+      projectId: "tutorial-27307",
+      storageBucket: "tutorial-27307.appspot.com",
+      messagingSenderId: "529801667905"
+    };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+    </script>
+
+  </head>
+
+  <body>
+    <script type="text/javascript"></script>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blog
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+              </div>
+            </li>
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Other Pages
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                <a class="dropdown-item active" href="ownProfile.html">ownProfile</a>
+                <a class="dropdown-item" href="faq.html">FAQ</a>
+                <a class="dropdown-item" href="404.html">404</a>
+                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+	
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Account Page</h1>
+	
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Account</li>
+	    <img id="msg1" src="images/message.png">
+      </ol>
+
+      <!-- Content Row -->
+      <div class="row" id="rowlist">
+        <!-- Sidebar Column -->
+        <div class="col-lg-3" id="leftlist">
+          <div class="list-group">
+
+            <!--Code for insert image-->
+            <div class="image-upload">
+              <label for="filetype">
+                <img class="img-circle" id="output" src="test"/>
+              </label>
+              <input type="file" id="filetype" accept="image/*" onchange="loadFile(event)" >
+            </div>
+
+            <!--End Code for insert image-->
+
+            <!--Code for stars-->
+            <div class="stars">
+              <h3> Stars Rating </h3>
+              <input class="star star-5" id="star-5" type="radio" name="star"/>
+              <label class="star star-5" for="star-5"></label>
+              <input class="star star-4" id="star-4" type="radio" name="star"/>
+              <label class="star star-4" for="star-4"></label>
+              <input class="star star-3" id="star-3" type="radio" name="star"/>
+              <label class="star star-3" for="star-3"></label>
+              <input class="star star-2" id="star-2" type="radio" name="star"/>
+              <label class="star star-2" for="star-2"></label>
+              <input class="star star-1" id="star-1" type="radio" name="star"/>
+              <label class="star star-1" for="star-1"></label>
+            </div>
+            <!--End Code for stars-->
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="col-lg-9" id="rightlist">
+          <div class="col-lg-9 mb-4">
+              <div class="card h-100 mw-100">
+                  <h4 class="card-header">Personal Particular</h4>
+                  <div class="card-body" id="fcardbody">
+                      <script>retrieveLead();</script>
+                      <p class="card-text"></p>
+                      <p id="output1"></p>
+                      <p id="output2"></p>
+                      <p id="output3"></p>
+                      <p id="output4"></p>
+                  </div>
+                  <div class="card-footer">
+                  <button class="button buttonBlack" onclick="div_show()">Edit</button>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-9 mb-4">
+            <div class="card h-100">
+              <h4 class="card-header">WatchList</h4>
+              <div class="card-body">
+                <p class="card-text">Nope no watchlist</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary">Edit</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9 mb-4">
+            <div class="card h-100">
+              <h4 class="card-header">Cars on sale</h4>
+              <div class="card-body">
+                <div class="cont">
+                </div>
+                <p class="card-text">I don't want sell ley!</p>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary">Edit</a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Popup Div Starts Here -->
+          <section class="at-login-form">
+          <!-- MODAL LOGIN -->
+           <div class="modal" id="at-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <header class="header">bsCars Login</header>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="div_hide()"><span aria-hidden="true">×</span></button>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                      <div class="form-group">
+                        <input type="name" class="form-control-form " id="name" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                        <input type="email" class="form-control-form " id="email" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <textarea id="msg" name="message" placeholder="Message"></textarea>
+                      </div>
+                      <a href="javascript:%20check_empty()" id="btnLogin" class="btn-lgin" onclick ="updateLead()">Edit</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- MODAL LOGIN ENDS -->
+          </section>
+          <!-- Popup Div Ends Here -->
+
+
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
